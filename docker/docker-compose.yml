@@ -7,4 +7,5 @@ services:
     container_name: nanogpt
     volumes:
       - ../:/app
-
+    ports:
+      - "8888:8888"
