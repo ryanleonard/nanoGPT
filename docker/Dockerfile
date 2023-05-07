@@ -21,4 +21,4 @@ RUN pip install --no-cache-dir -r packages-python3.txt
 COPY . .
 
 # Set the entrypoint command
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/docker/entrypoint.sh"]
