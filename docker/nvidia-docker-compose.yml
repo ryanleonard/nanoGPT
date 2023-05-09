@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nano-gpt-service:
+    build: .
+    tty: true
+    stdin_open: true
+    image: pytorch-nanogpt
+    container_name: nanogpt
+    volumes:
+      - ../:/app
+    ports:
+      - "8888:8888"
+    environment: 
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+
