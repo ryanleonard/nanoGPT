@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY ./packages-apt.txt .
 # Install any additional system packages needed
-RUN apt-get update && apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
     cmake \
     git \
