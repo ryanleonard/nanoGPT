@@ -3,14 +3,14 @@ version: '3.8'
 services:
   nano-gpt-service:
     build: 
-      context: .
-      dockerfile: Dockerfile.nvidia
+      context: ../
+      dockerfile: docker/Dockerfile.nvidia
     tty: true
     stdin_open: true
-    image: pytorch-nanogpt
+    image: pytorch-nanogpt-cuda
     container_name: nanogpt
-    volumes:
-      - ../:/app
+#    volumes:
+#      - ../:/app
     ports:
       - "8888:8888"
     environment: 
